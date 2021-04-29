@@ -14,8 +14,6 @@ public class Casa {
 
 		List<Cachorro> listaCaes = new ArrayList<>();
 
-
-
 		while (true) {
 			System.out.println("MENU PRINCIPAL\n");
 			Scanner scanner = new Scanner(System.in);
@@ -39,12 +37,20 @@ public class Casa {
 				cao.setEnergiaCachorro(100);
 				cao.setNumeroFilhotes(0);
 				listaCaes.add(cao);
-			//	break;
+
 			}
 			else if (menuPrincipal.equals("2")) {
 				System.out.println("LISTAR");
-				System.out.println(listaCaes);
-			//	break;
+				int i = 1;
+				for (Cachorro cao:listaCaes){
+					System.out.println(i + "-" + cao.getNomeCachorro());
+					i += 1;
+				}
+				System.out.println("Selecione um cachorro da lista para manipular: ");
+				int cachorroEscolhido = scanner.nextInt();
+				Cachorro caoAtual = listaCaes.get(cachorroEscolhido-1);
+				manipularCachorro(caoAtual, listaCaes);
+
 			}
 			else if (menuPrincipal.equals("3")) {
 				System.out.println("Obrigado por utilizar. Até a próxima!");	
@@ -54,17 +60,50 @@ public class Casa {
 				System.out.println("Opção inválida!\n");
 			}
 		}
-		
-		
-		
-		
-		
-		
-		
 	}
 
-		
-		
+	public static void manipularCachorro(Cachorro caoAtual, List<Cachorro> listaCaes) {
+
+		while (true) {
+			System.out.println("MENU MANIPULAR\n");
+			Scanner scanner = new Scanner(System.in);
+			System.out.print("(1) Ver dados do cão / (2) Alimentar / (3) Brincar / (4) Cruzar / (5) Menu Inicial \n");
+			String menuManipular = scanner.nextLine();
+			if (menuManipular.equals("1")) {
+				System.out.println("VER");
+				System.out.println(caoAtual.toString());
+
+				//	break;
+			}
+			else if (menuManipular.equals("2")) {
+				System.out.println("ALIMENTAR");
+				caoAtual.comer();
+				//	break;
+			}
+			else if (menuManipular.equals("3")) {
+				System.out.println("BRINCAR");
+				caoAtual.brincar();
+				//	break;
+			}
+			else if (menuManipular.equals("4")) {
+				System.out.println("CRUZAR");
+			//	caoAtual.podeCruzar(parceiro);
+			//	if (caoAtual.podeCruzar(parceiro)){
+			//		caoAtual.cruzarParceiro(parceiro);
+			//	}
+			}
+			else if (menuManipular.equals("5")) {
+				break;
+			}
+			else {
+				System.out.println("Opção inválida!\n");
+			}
+		}
+
+	}
+
+
+
 }
 
 

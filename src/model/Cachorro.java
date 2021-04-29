@@ -97,9 +97,9 @@ public class Cachorro {
 	// outros metodos
 	
 	public String toString() {
-		return "Cachorro [nomeCachorro=" + nomeCachorro + ", racaCachorro=" + racaCachorro + ", sexoCachorro="
-				+ sexoCachorro + ", idadeCachorro=" + idadeCachorro + ", numeroFilhotes=" + numeroFilhotes
-				+ ", energiaCachorro=" + energiaCachorro + "]";
+		return "\nNome: " + nomeCachorro + "\nRaça: " + racaCachorro + "\nSexo: "
+				+ sexoCachorro + "\nIdade: " + idadeCachorro + "\nEnergia: " + energiaCachorro
+				+ "\nNúmero de filhotes: " + numeroFilhotes;
 	}
 	
 	public void comer() {
@@ -109,17 +109,17 @@ public class Cachorro {
 				System.out.print("Digite a comida a ser alimentada:		(R)ação / (C)arne / (L)egumes: ");
 				String comida = scanner.nextLine();
 				if (comida.equals("R")) {
-					System.out.printf("%s comeu ração e aumentou sua energia em 50.", this.nomeCachorro);
+					System.out.printf("%s comeu ração e aumentou sua energia em 50.\n", this.nomeCachorro);
 					this.energiaCachorro = this.energiaCachorro + 50;
 					break;
 				}
 				else if (comida.equals("C")) {
-					System.out.printf("%s comeu carne e aumentou sua energia em 40.", this.nomeCachorro);
+					System.out.printf("%s comeu carne e aumentou sua energia em 40.\n", this.nomeCachorro);
 					this.energiaCachorro = this.energiaCachorro + 40;
 					break;
 				}
 				else if (comida.equals("L")) {
-					System.out.printf("%s comeu legumes e aumentou sua energia em 30.", this.nomeCachorro);	
+					System.out.printf("%s comeu legumes e aumentou sua energia em 30.\n", this.nomeCachorro);
 					this.energiaCachorro = this.energiaCachorro + 30;
 					break;
 				}
@@ -131,7 +131,7 @@ public class Cachorro {
 		else {
 			System.out.printf("A energia de %s deve ser inferior a 50!", this.nomeCachorro);
 		}
-		System.out.printf("A energia atual de %s é %d.", this.nomeCachorro, this.energiaCachorro);
+		System.out.printf("A energia atual de %s é %d.\n", this.nomeCachorro, this.energiaCachorro);
 	}
 	
 	public void brincar() {
@@ -141,23 +141,24 @@ public class Cachorro {
 				System.out.print("Digite a brincadeira a ser feita:		(B)uscar bolinha / (S)altar / (G)irar pelo chão: ");
 				String brincadeira = scanner.nextLine();
 				if (brincadeira.equals("B")) {
-					System.out.printf("%s buscou a bolinha e diminuiu sua energia em 30.", this.nomeCachorro);
+					System.out.printf("%s buscou a bolinha e diminuiu sua energia em 30.\n", this.nomeCachorro);
 					this.energiaCachorro = this.energiaCachorro - 30;
 					break;
 				}
 				else if (brincadeira.equals("S")) {
-					System.out.printf("%s saltou e diminuiui sua energia em 20.", this.nomeCachorro);
+					System.out.printf("%s saltou e diminuiui sua energia em 20.\n", this.nomeCachorro);
 					this.energiaCachorro = this.energiaCachorro - 20;
 					break;
 				}
 				else if (brincadeira.equals("G")) {
-					System.out.printf("%s girou pelo chão e diminuiu sua energia em 10.", this.nomeCachorro);	
+					System.out.printf("%s girou pelo chão e diminuiu sua energia em 10.\n", this.nomeCachorro);
 					this.energiaCachorro = this.energiaCachorro - 10;
 					break;
 				}
 				else {
 					System.out.println("Opção inválida!");
 				}
+				System.out.printf("A energia de %s atual é %d", this.nomeCachorro, this.energiaCachorro);
 			}
 		}
 	}
