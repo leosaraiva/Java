@@ -163,38 +163,38 @@ public class Cachorro {
 	
 	public boolean podeCruzar(Cachorro parceiro) {
 		if ((!this.sexoCachorro.equals(parceiro.getSexoCachorro())) &&
-				(this.idadeCachorro >= 1 && this.idadeCachorro >=9) && 
-				(parceiro.getIdadeCachorro() >= 1 && parceiro.getIdadeCachorro() >=9) && 
+				(this.idadeCachorro >= 1 && this.idadeCachorro <=9) &&
+				(parceiro.getIdadeCachorro() >= 1 && parceiro.getIdadeCachorro() <=9) &&
 				(this.racaCachorro.equals(parceiro.getRacaCachorro())) &&
 				(this.energiaCachorro >= 80) && (parceiro.getEnergiaCachorro() >= 80)){
-		    System.out.printf("Todas as condições foram atendidas! %s e %s podem cruzar :)", this.nomeCachorro, parceiro.getNomeCachorro());  
+
 			return true;
 		}
 		else if (this.sexoCachorro.equals(parceiro.getSexoCachorro()))  {
-			System.out.printf("%s e %s devem ser de sexos diferentes!", this.nomeCachorro, parceiro.getNomeCachorro());
+	//		System.out.printf("%s e %s devem ser de sexos diferentes!", this.nomeCachorro, parceiro.getNomeCachorro());
 			return false;
 		}
 		
-		else if (this.idadeCachorro >= 1 && this.idadeCachorro <=9) {
-			System.out.printf("A idade de %s deve estar entre 1 e 9 anos!", this.nomeCachorro);
+		else if (this.idadeCachorro <= 1 || this.idadeCachorro >=9) {
+	//		System.out.printf("A idade de %s deve estar entre 1 e 9 anos!", this.nomeCachorro);
 			return false;
 		}
 		
-		else if (parceiro.getIdadeCachorro() <= 1 && parceiro.getIdadeCachorro() <=9) {
-			System.out.printf("A idade de %s deve estar entre 1 e 9 anos!", parceiro.getNomeCachorro());
+		else if (parceiro.getIdadeCachorro() <= 1 || parceiro.getIdadeCachorro() >=9) {
+	//		System.out.printf("A idade de %s deve estar entre 1 e 9 anos!", parceiro.getNomeCachorro());
 			return false;
 		}
 		
 		else if (!this.racaCachorro.equals(parceiro.getRacaCachorro())) {
-			System.out.printf("%s e %s devem ser da mesma raça!", this.nomeCachorro, parceiro.getNomeCachorro());
+		//	System.out.printf("%s e %s devem ser da mesma raça!", this.nomeCachorro, parceiro.getNomeCachorro());
 			return false;
 		}
 		else if (this.energiaCachorro < 80) {
-			System.out.printf("A energia de %s deve ser maior que 80!", this.nomeCachorro);
+	//		System.out.printf("A energia de %s deve ser maior que 80!", this.nomeCachorro);
 			return false;
 		}
 		else if (parceiro.getEnergiaCachorro() < 80) {
-			System.out.printf("A energia de %s deve ser maior que 80!", parceiro.getNomeCachorro());
+	//		System.out.printf("A energia de %s deve ser maior que 80!", parceiro.getNomeCachorro());
 			return false;
 		}
 		
@@ -203,23 +203,16 @@ public class Cachorro {
 		}
 	}
 	
-		public int randomizarFilhotes() {
-			return ThreadLocalRandom.current().nextInt(3, 10);
-		
+	public int randomizarFilhotes() {
+		return ThreadLocalRandom.current().nextInt(3, 10);
 	}
 	
 	public void cruzarParceiro(Cachorro parceiro) {
-		if (podeCruzar(parceiro)) {
-			this.energiaCachorro = this.energiaCachorro - 50;
-			parceiro.setEnergiaCachorro(parceiro.getEnergiaCachorro() - 50);
-			int filhotesCasal = randomizarFilhotes();
-			this.numeroFilhotes = this.numeroFilhotes + filhotesCasal;
-			parceiro.setNumeroFilhotes(parceiro.getNumeroFilhotes() + filhotesCasal);
-			System.out.printf("%s e %s geraram %d filhotes.", this.nomeCachorro, parceiro.getNomeCachorro(), filhotesCasal);
-			
-		}
-		else {
-			System.out.printf("%s e %s não podem cruzar. Tente novamente!", this.nomeCachorro, parceiro.getNomeCachorro());
-		}
+		this.energiaCachorro = this.energiaCachorro - 50;
+		parceiro.setEnergiaCachorro(parceiro.getEnergiaCachorro() - 50);
+		int filhotesCasal = randomizarFilhotes();
+		this.numeroFilhotes = this.numeroFilhotes + filhotesCasal;
+		parceiro.setNumeroFilhotes(parceiro.getNumeroFilhotes() + filhotesCasal);
+		System.out.printf("%s e %s geraram %d filhotes.\n", this.nomeCachorro, parceiro.getNomeCachorro(), filhotesCasal);
 	}
 }
