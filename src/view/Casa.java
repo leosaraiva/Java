@@ -70,23 +70,22 @@ public class Casa {
 			System.out.print("(1) Ver dados do cão / (2) Alimentar / (3) Brincar / (4) Cruzar / (5) Menu Inicial \n");
 			String menuManipular = scanner.nextLine();
 			if (menuManipular.equals("1")) {
-				System.out.println("VER");
+				System.out.println("VER\n");
 				System.out.println(caoAtual.toString());
 
-				//	break;
 			}
 			else if (menuManipular.equals("2")) {
-				System.out.println("ALIMENTAR");
+				System.out.println("ALIMENTAR\n");
 				caoAtual.comer();
-				//	break;
+
 			}
 			else if (menuManipular.equals("3")) {
-				System.out.println("BRINCAR");
+				System.out.println("BRINCAR\n");
 				caoAtual.brincar();
-				//	break;
+
 			}
 			else if (menuManipular.equals("4")) {
-				System.out.println("CRUZAR");
+				System.out.println("CRUZAR\n");
 			//	caoAtual.podeCruzar(parceiro);
 			//	if (caoAtual.podeCruzar(parceiro)){
 			//		caoAtual.cruzarParceiro(parceiro);

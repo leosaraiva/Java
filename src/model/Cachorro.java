@@ -129,7 +129,7 @@ public class Cachorro {
 			}
 		}
 		else {
-			System.out.printf("A energia de %s deve ser inferior a 50!", this.nomeCachorro);
+			System.out.printf("A energia de %s deve ser inferior a 50!\n", this.nomeCachorro);
 		}
 		System.out.printf("A energia atual de %s é %d.\n", this.nomeCachorro, this.energiaCachorro);
 	}
@@ -155,11 +155,9 @@ public class Cachorro {
 					this.energiaCachorro = this.energiaCachorro - 10;
 					break;
 				}
-				else {
-					System.out.println("Opção inválida!");
-				}
-				System.out.printf("A energia de %s atual é %d", this.nomeCachorro, this.energiaCachorro);
+				else System.out.println("Opção inválida!");
 			}
+			System.out.printf("A energia atual de %s é %d.\n", this.nomeCachorro, this.energiaCachorro);
 		}
 	}
 	
