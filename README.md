@@ -1,9 +1,13 @@
 # Java
-TED5 da Disciplina Linguagem de Programação 2
+TED5 da Disciplina Linguagem de Programação 2 do curso de Sistemas para Internet do Uniesp.
+
+Professora: Alana Morais
+
+ENUNCIADO
 
 Implemente as seguintes classes:
 
-classe Cachorro
+Classe Cachorro
 
 Possui os atributos nome, raça, sexo (M ou F), idade, energia e numero_filhotes. Os dois últimos atributos não são passados por parâmetro pelo construtor, pois são sempre inicializados dentro dele. Energia sempre é inicializada com 100 e numero_filhotes sempre é inicializado com 0. Não esqueça os gets e sets.
 Método toString(): retorna uma string com as informações dos 6 atributos.
